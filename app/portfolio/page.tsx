@@ -32,50 +32,98 @@ export default function PortfolioPage() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main className="bg-[#f5f2eb] text-[#1f2937]">
         {/* ── Hero ── */}
-        <section className="bg-amazon-dark py-10 md:py-15 relative overflow-hidden">
-          <div className="absolute inset-0 bg-cover bg-center pointer-events-none" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1550399105-c4db5fb85c18?q=80&w=1171&auto=format&fit=crop')" }} />
-          <div className="absolute inset-0 bg-amazon-dark/80 pointer-events-none" />
-          <div
-            className="absolute inset-0 opacity-[0.04] pointer-events-none"
-            style={{ backgroundImage: "radial-gradient(circle, #FF9900 1px, transparent 1px)", backgroundSize: "26px 26px" }}
-          />
-          <div className="absolute top-0 right-0 w-96 h-96 bg-amazon-orange/5 rounded-full blur-3xl pointer-events-none" />
+        <section className="py-12 md:py-16">
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
+            
 
-          <div className="relative max-w-7xl mx-auto px-4 md:px-6">
-            <nav className="flex items-center gap-1.5 text-xs text-white/30 mb-7">
-              <Link href="/" className="hover:text-white/60 transition-colors">Home</Link>
-              <ChevronRight size={12} />
-              <span className="text-amazon-orange font-medium">Portfolio</span>
-            </nav>
-
-            <div className="max-w-3xl">
-              <span className="inline-flex items-center gap-1.5 bg-amazon-orange/10 border border-amazon-orange/20 text-amazon-orange text-xs font-bold px-3 py-1.5 rounded-full mb-5 uppercase tracking-widest">
-                <Star size={11} fill="currentColor" /> Our Published Works
-              </span>
-              <h1 className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-white leading-tight tracking-tight mb-5">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[440px] lg:min-h-[560px]">
+              <div className="max-w-2xl h-full flex flex-col justify-center">
+              
+              <h1 className="text-4xl font-serif md:text-6xl  text-[#131a22] leading-tight tracking-tight mb-5">
                 2,500+ Books.{" "}
-                <span className="text-amazon-orange">Every Genre.</span>
+                <span className="text-[#f59e0b]">Every Genre.</span>
               </h1>
-              <p className="text-white/55 text-base md:text-lg leading-relaxed mb-8 max-w-2xl">
+              <p className="text-[#3a4553] text-base md:text-lg leading-relaxed mb-8 max-w-2xl">
                 From debut authors finding their first readers to established experts becoming Amazon bestsellers — here&apos;s a sample of what we&apos;ve built together.
               </p>
+              </div>
+
+             <div className="min-h-[420px] md:min-h-[540px] lg:min-h-[680px] flex items-center justify-center bg-[#f5f2ec]">
+  <svg
+    viewBox="0 0 520 700"
+    className="w-full h-full max-h-[680px] drop-shadow-[0_18px_40px_rgba(0,0,0,0.18)]"
+  >
+    <defs>
+      {/* IMAGE */}
+      <pattern
+        id="quotePattern"
+        patternUnits="userSpaceOnUse"
+        width="520"
+        height="700"
+      >
+        <image
+          href="https://images.unsplash.com/photo-1550399105-c4db5fb85c18?q=80&w=1400&auto=format&fit=crop"
+          x="0"
+          y="0"
+          width="520"
+          height="700"
+          preserveAspectRatio="xMidYMid slice"
+        />
+      </pattern>
+
+      {/* BIG DOUBLE QUOTE MASK */}
+      <mask id="doubleQuoteMask">
+        <rect width="100%" height="100%" fill="black" />
+
+        {/* LEFT QUOTE */}
+        <path
+          d="
+            M120 160
+            C120 85 175 40 245 40
+            L245 120
+            C205 120 180 145 180 180
+            L245 180
+            L245 380
+            L85 380
+            L85 210
+            C85 185 95 170 120 160
+            Z
+          "
+          fill="white"
+        />
+
+        {/* RIGHT QUOTE */}
+        <path
+          d="
+            M300 160
+            C300 85 355 40 425 40
+            L425 120
+            C385 120 360 145 360 180
+            L425 180
+            L425 380
+            L265 380
+            L265 210
+            C265 185 275 170 300 160
+            Z
+          "
+          fill="white"
+        />
+      </mask>
+    </defs>
+
+    {/* IMAGE INSIDE SHAPE */}
+    <rect
+      width="100%"
+      height="100%"
+      fill="url(#quotePattern)"
+      mask="url(#doubleQuoteMask)"
+    />
+  </svg>
+</div>
             </div>
 
-            <div className="flex flex-wrap gap-x-10 gap-y-5 pt-7 border-t border-white/10">
-              {stats.map(({ icon: Icon, value, label }) => (
-                <div key={label} className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-amazon-orange/10 border border-amazon-orange/20 flex items-center justify-center shrink-0">
-                    <Icon size={16} className="text-amazon-orange" />
-                  </div>
-                  <div>
-                    <p className="text-amazon-orange font-extrabold text-xl leading-none">{value}</p>
-                    <p className="text-white/35 text-xs mt-0.5">{label}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -83,9 +131,9 @@ export default function PortfolioPage() {
         <section className="py-10 md:py-15 bg-white">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <div className="text-center mb-8">
-              <p className="text-amazon-orange text-xs font-bold uppercase tracking-widest mb-2">By Genre</p>
-              <h2 className="text-3xl font-extrabold text-amazon-dark tracking-tight">
-                Every Genre, <span className="text-amazon-orange">Mastered</span>
+              <p className="text-[#b45309] text-xs font-semibold uppercase tracking-widest mb-2">By Genre</p>
+              <h2 className="text-3xl font-semibold text-[#131a22] tracking-tight">
+                Every Genre, <span className="text-[#f59e0b]">Mastered</span>
               </h2>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -100,12 +148,12 @@ export default function PortfolioPage() {
         </section>
 
         {/* ── Portfolio Grid ── */}
-        <section className="py-10 md:py-15 bg-amazon-surface">
+        <section className="py-10 md:py-15 bg-[#f5f2eb]">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <div className="text-center mb-8">
-              <p className="text-amazon-orange text-xs font-bold uppercase tracking-widest mb-2">Featured Titles</p>
-              <h2 className="text-3xl font-extrabold text-amazon-dark tracking-tight mb-3">
-                Browse <span className="text-amazon-orange">Recent Work</span>
+              <p className="text-[#b45309] text-xs font-semibold uppercase tracking-widest mb-2">Featured Titles</p>
+              <h2 className="text-3xl font-semibold text-[#131a22] tracking-tight mb-3">
+                Browse <span className="text-[#f59e0b]">Recent Work</span>
               </h2>
               <p className="text-muted-foreground text-sm">Hover any cover to see its Amazon rating.</p>
             </div>
@@ -114,26 +162,28 @@ export default function PortfolioPage() {
         </section>
 
         {/* ── Process teaser ── */}
-        <section className="py-10 md:py-15 bg-amazon-dark">
+        <section className="py-12 md:py-14 bg-[#f5f2eb]">
           <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
-            <p className="text-amazon-orange text-xs font-bold uppercase tracking-widest mb-3">Ready to Join Them?</p>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight tracking-tight mb-4">
+            <p className="text-[#b45309] text-xs font-semibold uppercase tracking-widest mb-3">
+              Ready to Join Them?
+            </p>
+            <h2 className="text-3xl md:text-4xl font-semibold text-[#131a22] leading-tight tracking-tight mb-4">
               Your Book Could Be{" "}
-              <span className="text-amazon-orange">Next on This Page</span>
+              <span className="text-[#f59e0b]">Next on This Page</span>
             </h2>
-            <p className="text-white/50 text-base max-w-xl mx-auto leading-relaxed mb-8">
+            <p className="text-[#3a4553] text-base max-w-xl mx-auto leading-relaxed mb-8">
               Every book in our portfolio started with a single conversation. Book your free consultation and let&apos;s figure out exactly how we&apos;d bring yours to life.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold px-7 py-3 rounded text-sm transition-colors shadow-lg shadow-amazon-orange/20 outline outline-2 outline-offset-2 outline-amazon-orange/60"
+                className="inline-flex items-center gap-2 bg-[#f7b731] hover:bg-[#f2aa1f] text-[#131a22] font-semibold px-7 py-3 rounded-md text-sm transition-colors shadow-sm"
               >
                 Start Your Publishing Journey <ArrowRight size={15} />
               </Link>
               <Link
                 href="/services/book-writing"
-                className="inline-flex items-center gap-2 border-2 border-white/20 text-white hover:border-amazon-orange hover:text-amazon-orange font-bold px-7 py-3 rounded text-sm transition-colors"
+                className="inline-flex items-center gap-2 border border-[#c9d2de] hover:border-[#8b99ab] text-[#131a22] hover:text-[#004a8f] font-semibold px-7 py-3 rounded-md text-sm transition-colors bg-white/60"
               >
                 View Our Services
               </Link>

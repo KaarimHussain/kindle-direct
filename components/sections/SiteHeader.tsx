@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   Menu,
   X,
@@ -45,6 +46,8 @@ const navLinks = [
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   return (
     <header className="sticky top-0 z-50 shadow-lg">
@@ -73,11 +76,13 @@ export default function SiteHeader() {
         <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between gap-6">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <div className="w-8 h-8 rounded bg-amazon-orange flex items-center justify-center">
-              <BookOpen size={16} className="text-amazon-dark" />
+            <div className="w-8 h-8 rounded bg-[#f7b731] flex items-center justify-center">
+              <BookOpen size={16} className="text-[#131a22]" />
             </div>
             <div className="leading-tight">
-              <span className="text-white font-extrabold text-base tracking-tight">
+              <span
+                className="text-white font-extrabold text-base tracking-tight"
+              >
                 amz<span className="text-amazon-orange">kindle</span>
               </span>
               <span className="block text-white/60 text-[10px] font-semibold tracking-widest uppercase -mt-0.5">
@@ -100,7 +105,9 @@ export default function SiteHeader() {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-white hover:text-amazon-orange data-popup-open:text-amazon-orange data-open:text-amazon-orange text-sm font-medium h-auto px-3 py-1.5">
+                  <NavigationMenuTrigger
+                    className="bg-transparent text-white hover:text-amazon-orange data-popup-open:text-amazon-orange data-open:text-amazon-orange text-sm font-medium h-auto px-3 py-1.5"
+                  >
                     Services
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>

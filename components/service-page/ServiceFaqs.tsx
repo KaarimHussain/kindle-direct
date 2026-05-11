@@ -29,15 +29,15 @@ export default function ServiceFaqs({
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-10 md:py-15 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-72 h-72 bg-indigo-50 rounded-full blur-3xl pointer-events-none" />
+    <section className="py-10 md:py-15 bg-[#f5f2eb] relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-72 h-72 bg-[#f7b731]/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-3xl mx-auto px-4 md:px-6">
         <div className="text-center mb-9">
-          <p className="text-amazon-orange text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-[#b45309] text-xs font-semibold uppercase tracking-widest mb-2">
             FAQs
           </p>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-amazon-dark tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-semibold text-[#131a22] tracking-tight">
             {heading}
           </h2>
         </div>

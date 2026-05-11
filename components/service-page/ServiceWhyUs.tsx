@@ -43,12 +43,12 @@ export default function ServiceWhyUs({
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left — sticky white panel */}
           <div className="lg:sticky lg:top-24">
-            <p className="text-amazon-orange text-xs font-bold uppercase tracking-widest mb-3">
+            <p className="text-[#b45309] text-xs font-semibold uppercase tracking-widest mb-3">
               Why Us
             </p>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-amazon-dark leading-tight tracking-tight mb-4">
+            <h2 className="text-3xl md:text-4xl font-semibold text-[#131a22] leading-tight tracking-tight mb-4">
               {heading}{" "}
-              <span className="text-amazon-orange">{highlight}</span>
+              <span className="text-[#f59e0b]">{highlight}</span>
             </h2>
             <p className="text-muted-foreground text-base leading-relaxed mb-6">
               {body}

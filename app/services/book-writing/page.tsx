@@ -2,31 +2,9 @@ import type { Metadata } from "next";
 import SiteHeader from "@/components/sections/SiteHeader";
 import SiteFooter from "@/components/sections/SiteFooter";
 import ServiceHero from "@/components/service-page/ServiceHero";
-import ServiceIncludes from "@/components/service-page/ServiceIncludes";
-import ServiceProcess from "@/components/service-page/ServiceProcess";
-import ServiceWhyUs from "@/components/service-page/ServiceWhyUs";
 import ServicePackages from "@/components/service-page/ServicePackages";
-import ServiceTestimonials from "@/components/service-page/ServiceTestimonials";
 import ServiceFaqs from "@/components/service-page/ServiceFaqs";
-import ServiceCta from "@/components/service-page/ServiceCta";
-import {
-  PenLine,
-  BookOpen,
-  FileSearch,
-  Users,
-  MessageSquare,
-  Rocket,
-  CheckCircle2,
-  ShieldCheck,
-  Clock,
-  Star,
-  Globe,
-  HeartHandshake,
-  Layers,
-  BarChart,
-  Fingerprint,
-  RefreshCw,
-} from "lucide-react";
+import { ArrowRight, CheckCircle2, Star } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Book Writing & Ghostwriting Services | Amazon Books Publishing",
@@ -38,7 +16,7 @@ export default function BookWritingPage() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main className="bg-[#ffffff] text-[#1f2937]">
         {/* ── Hero ── */}
         <ServiceHero
           badge="Ghostwriting & Book Writing"
@@ -46,7 +24,8 @@ export default function BookWritingPage() {
           highlight="By Expert Ghostwriters"
           description="From a rough idea to a market-ready manuscript — our seasoned ghostwriters craft compelling books in your voice, across every genre. You get full credit, full rights, and a book you're proud of."
           serviceName="Book Writing"
-          bgImage="https://images.unsplash.com/photo-1462642109801-4ac2971a3a51?q=80&w=1073&auto=format&fit=crop"
+          bgImage="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1073&auto=format&fit=crop"
+          symbolVariant="hash"
           stats={[
             { value: "800+", label: "Manuscripts Delivered" },
             { value: "60+", label: "Genres Covered" },
@@ -55,262 +34,243 @@ export default function BookWritingPage() {
           ]}
         />
 
-        {/* ── Genres strip ── */}
-        <section className="py-6 bg-white border-b border-border">
+        <section className="bg-[#ffffff] py-16">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
-            <div className="flex flex-wrap gap-2 items-center">
-              <span className="text-muted-foreground text-xs font-bold uppercase tracking-widest mr-2">
-                Genres:
-              </span>
+            <div className="max-w-3xl mx-auto text-center mb-14">
+              <p className="text-[#b45309] uppercase tracking-[0.28em] text-[11px] font-semibold mb-4">
+                Publish with Kindle Direct Publishing in 3 simple steps
+              </p>
+              <h2 className="text-3xl md:text-4xl font-semibold text-[#0f172a] tracking-tight leading-tight">
+                Publish with Kindle Direct Publishing in 3 simple steps
+              </h2>
+              <p className="mt-4 text-[#475569] text-sm md:text-base leading-relaxed">
+                We guide your book from manuscript preparation through publishing and promotion with the same clean, easy flow used by top KDP authors.
+              </p>
+            </div>
+
+            <div className="space-y-12">
               {[
-                "Fiction",
-                "Romance",
-                "Thriller & Mystery",
-                "Sci-Fi & Fantasy",
-                "Self-Help",
-                "Business",
-                "Memoir & Biography",
-                "Health & Wellness",
-                "Personal Finance",
-                "Children's",
-                "True Crime",
-                "Spirituality",
-              ].map((g) => (
-                <span
-                  key={g}
-                  className="text-xs font-semibold bg-amazon-surface border border-border text-amazon-dark px-3 py-1 rounded-full"
-                >
-                  {g}
-                </span>
+                {
+                  step: "Step 1",
+                  title: "Prepare your manuscript and cover files",
+                  bullets: [
+                    "Format your manuscript file and create your front, back, and back matter.",
+                    "Set your title page, table of contents, and author bio.",
+                    "Create a cover that reflects your book and brand.",
+                  ],
+                  tags: ["eBook", "Paperback", "Hardcover"],
+                  image:
+                    "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1200&auto=format&fit=crop",
+                },
+                {
+                  step: "Step 2",
+                  title: "Publish in print and digital formats",
+                  bullets: [
+                    "Enter book details such as title, author, and description.",
+                    "Upload and preview your prepared manuscript and book cover.",
+                    "Select your publishing rights and price your book for launch.",
+                  ],
+                  tags: ["Kindle eBook", "Paperback", "Expanded Distribution"],
+                  image:
+                    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop",
+                },
+                {
+                  step: "Step 3",
+                  title: "Promote your book to readers",
+                  bullets: [
+                    "Offer your eBook on Kindle Unlimited by enrolling in KDP Select.",
+                    "Create an author page to share information about yourself and your books.",
+                    "Set up advertising ads to reach more readers through Amazon Advertising.",
+                  ],
+                  tags: ["Author Page", "Amazon Ads", "A+ Content"],
+                  image:
+                    "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1200&auto=format&fit=crop",
+                },
+              ].map((item, idx) => (
+                <div key={item.step} className="grid gap-8 items-center lg:grid-cols-2">
+                  <div className={idx % 2 === 1 ? "space-y-6 lg:order-last" : "space-y-6"}>
+                    <div className="inline-flex items-center gap-3">
+                      <span className="text-xs font-semibold uppercase tracking-[0.3em] text-[#7c3aed]">
+                        {item.step}
+                      </span>
+                      <span className="h-8 w-px bg-[#e5e7eb]" />
+                      <div className="text-xs font-semibold text-[#F89C00] uppercase tracking-[0.24em]">
+                        Book Writing Service
+                      </div>
+                    </div>
+
+                    <h3 className="text-2xl font-semibold text-[#0f172a] max-w-xl">
+                      {item.title}
+                    </h3>
+
+                    <ul className="space-y-3 text-[#475569] text-sm leading-6">
+                      {item.bullets.map((bullet) => (
+                        <li key={bullet} className="flex gap-3">
+                          <CheckCircle2 size={18} className="mt-1 text-[#f59e0b] shrink-0" />
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      {item.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-xs font-semibold uppercase tracking-[0.24em] text-[#F89C00] bg-white border border-[#e5e7eb] px-3 py-2 rounded-full"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className={idx % 2 === 1 ? "rounded-[2rem] overflow-hidden border border-[#e5e7eb] bg-white shadow-sm lg:order-first" : "rounded-[2rem] overflow-hidden border border-[#e5e7eb] bg-white shadow-sm"}>
+                    <img src={item.image} alt={item.title} className="w-[700px] h-[500px]  object-cover" />
+                  </div>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ── Includes ── */}
-        <ServiceIncludes
-          heading="Everything Your Book Needs"
-          subheading="A complete ghostwriting service with nothing left for you to figure out."
-          items={[
-            {
-              icon: MessageSquare,
-              title: "In-Depth Story Discovery Call",
-              desc: "We start with a deep-dive consultation to capture your vision, voice, target audience, and core message.",
-            },
-            {
-              icon: FileSearch,
-              title: "Research & Fact-Checking",
-              desc: "Our writers conduct thorough research to ensure accuracy, authority, and depth in every chapter.",
-            },
-            {
-              icon: Layers,
-              title: "Chapter-by-Chapter Outline",
-              desc: "A detailed chapter outline approved by you before a single word of the manuscript is written.",
-            },
-            {
-              icon: PenLine,
-              title: "Full Manuscript Writing",
-              desc: "Professional, genre-appropriate prose that reads authentically in your voice — delivered in milestone batches.",
-            },
-            {
-              icon: RefreshCw,
-              title: "Unlimited Revisions",
-              desc: "We revise until you're 100% happy. No cap on rounds, no extra charges for changes.",
-            },
-            {
-              icon: CheckCircle2,
-              title: "Editorial Polish & Proofread",
-              desc: "Final pass by our editorial team to catch grammar, consistency, and flow issues before delivery.",
-            },
-            {
-              icon: ShieldCheck,
-              title: "Full NDA & Rights Transfer",
-              desc: "Iron-clad non-disclosure agreement. All intellectual property transfers to you upon completion.",
-            },
-            {
-              icon: BookOpen,
-              title: "Formatted Final Manuscript",
-              desc: "Delivered in Word and PDF — formatted and ready for editing, design, or direct KDP upload.",
-            },
-            {
-              icon: Users,
-              title: "Dedicated Project Manager",
-              desc: "A single point of contact who coordinates your writer and keeps the project on schedule.",
-            },
-          ]}
-        />
+        <section className="bg-white py-16">
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <p className="text-[#f59e0b] text-xs font-semibold uppercase tracking-[0.35em] mb-3">
+                Real author stories
+              </p>
+              <h2 className="text-3xl md:text-4xl font-semibold text-[#0f172a] tracking-tight">
+                Authors who trusted us with their story
+              </h2>
+            </div>
 
-        {/* ── Process ── */}
-        <ServiceProcess
-          heading="From Idea to Final Manuscript"
-          subheading="Our proven 5-step writing process keeps you in control without the overwhelm."
-          steps={[
-            {
-              num: "01",
-              icon: MessageSquare,
-              title: "Discovery & Voice Capture",
-              desc: "We interview you extensively to understand your story, your voice, and your goals — then match you with the perfect writer.",
-            },
-            {
-              num: "02",
-              icon: FileSearch,
-              title: "Research & Outline",
-              desc: "Your writer conducts genre-specific research and builds a detailed chapter-by-chapter outline for your approval.",
-            },
-            {
-              num: "03",
-              icon: PenLine,
-              title: "Writing in Milestones",
-              desc: "Drafts are delivered chapter by chapter so you can provide feedback as we go — no waiting until the end.",
-            },
-            {
-              num: "04",
-              icon: RefreshCw,
-              title: "Review & Revise",
-              desc: "You review every batch. We revise until it sounds exactly like you and reads exactly how you envisioned.",
-            },
-            {
-              num: "05",
-              icon: Rocket,
-              title: "Final Delivery",
-              desc: "Polished, proofread, formatted manuscript delivered — ready for cover design, publishing, or submission.",
-            },
-          ]}
-        />
+            <div className="grid gap-6 md:grid-cols-3">
+              {[
+                {
+                  name: "Laura Rocca",
+                  sub: "Italy | Romance",
+                  quote:
+                    "Becoming a KDP author allowed me to finally live my childhood dream. The writer captured my voice and helped me launch a polished romance novel in months.",
+                  avatar:
+                    "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop",
+                },
+                {
+                  name: "Sundari Venkatraman",
+                  sub: "India | Romance",
+                  quote:
+                    "My memoir was in pieces until the ghostwriter organized my story and made it feel true. I now have a book I can proudly share.",
+                  avatar:
+                    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop",
+                },
+                {
+                  name: "Marah Woolf",
+                  sub: "Germany | Fantasy",
+                  quote:
+                    "I had no idea where to start. The team turned my idea into a real book and guided me all the way from outline to final manuscript.",
+                  avatar:
+                    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=600&auto=format&fit=crop",
+                },
+              ].map((author) => (
+                <div key={author.name} className="rounded-[2rem] border border-[#e5e7eb] bg-[#fffdf8] p-8 text-center shadow-sm">
+                  <div className="relative mx-auto mb-6 h-24 w-24 overflow-hidden rounded-full border-4 border-white bg-[#fef3c7] shadow-sm">
+                    <img src={author.avatar} alt={author.name} className="h-full w-full object-cover" />
+                  </div>
+                  <p className="text-[#475569] text-sm leading-relaxed mb-6">“{author.quote}”</p>
+                  <div>
+                    <p className="font-semibold text-[#0f172a]">{author.name}</p>
+                    <p className="text-[#94a3b8] text-xs uppercase tracking-[0.3em] mt-1">{author.sub}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-        {/* ── Why Us ── */}
-        <ServiceWhyUs
-          heading="Why Authors Choose"
-          highlight="Our Ghostwriting Team"
-          body="With 800+ manuscripts under our belt and writers in every major genre, we're not just a writing service — we're your creative partner."
-          points={[
-            {
-              icon: Fingerprint,
-              title: "Your Voice, Perfectly Captured",
-              desc: "We use voice-capture interviews, sample analysis, and iterative feedback to write prose that sounds authentically like you.",
-            },
-            {
-              icon: ShieldCheck,
-              title: "100% Confidential — Always",
-              desc: "Every project is covered by a legally binding NDA. We never list your book in our portfolio without explicit permission.",
-            },
-            {
-              icon: Star,
-              title: "Genre-Matched Expert Writers",
-              desc: "We don't assign generalists. You get a writer with proven, published experience in your exact genre.",
-            },
-            {
-              icon: Clock,
-              title: "Strict Deadline Adherence",
-              desc: "98% of our projects deliver on or ahead of schedule. Milestones keep everyone accountable.",
-            },
-            {
-              icon: Globe,
-              title: "Global Bestseller Track Record",
-              desc: "Our ghostwritten books have hit #1 in categories across Amazon US, UK, CA, and AU.",
-            },
-            {
-              icon: HeartHandshake,
-              title: "You Own 100% of the Rights",
-              desc: "Full work-for-hire agreement. Your name on the cover. Your royalties. Your book.",
-            },
-          ]}
-        />
+        <section className="bg-[#fff8ed] py-16">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 grid gap-10 lg:grid-cols-[0.95fr_0.85fr] items-center">
+            <div className="space-y-6">
+              <p className="text-[#b45309] text-xs font-semibold uppercase tracking-[0.35em] mb-2">
+                Prepare beautifully
+              </p>
+              <h2 className="text-3xl md:text-4xl font-semibold text-[#0f172a] tracking-tight">
+                We can help you get started with Kindle Create
+              </h2>
+              <p className="text-[#475569] text-sm md:text-base leading-relaxed max-w-2xl">
+                Turn your manuscript into a beautiful book. Whether you're writing a comic book, cookbook, travel guide, or novel, our formatting support helps prepare your manuscript for publication.
+              </p>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 rounded-md bg-[#f59e0b] px-6 py-3 text-sm font-semibold text-[#0f172a] shadow-md shadow-[#f59e0b]/20 transition-colors hover:bg-[#d97706]"
+              >
+                Learn more about Kindle Create
+                <ArrowRight size={16} />
+              </a>
+            </div>
+            <div className="rounded-[2rem] overflow-hidden border border-[#e5e7eb] bg-white shadow-sm">
+              <img
+                src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1200&auto=format&fit=crop"
+                alt="Kindle Create preview"
+                className="w-[700px] h-[500px] object-cover"
+              />
+            </div>
+          </div>
+        </section>
 
-        {/* ── Packages ── */}
-        <ServicePackages
-          heading="Book Writing Packages"
-          subheading="Straightforward pricing based on word count. No hourly rates, no surprises."
-          packages={[
-            {
-              name: "Starter",
-              price: "$2,499",
-              note: "Up to 20,000 words",
-              desc: "Perfect for short non-fiction, self-help guides, and business books under 100 pages.",
-              features: [
-                "Up to 20,000 words",
-                "1 voice-capture session",
-                "Chapter outline included",
-                "3 revision rounds",
-                "Proofread & formatted delivery",
-                "Full NDA & rights transfer",
-                "14-week delivery",
-              ],
-            },
-            {
-              name: "Professional",
-              price: "$4,999",
-              note: "Up to 50,000 words",
-              desc: "Ideal for full-length non-fiction, memoirs, or genre fiction up to 200 pages.",
-              features: [
-                "Up to 50,000 words",
-                "2 voice-capture sessions",
-                "Detailed chapter outline",
-                "Unlimited revisions",
-                "Developmental edit included",
-                "Proofread & formatted delivery",
-                "Full NDA & rights transfer",
-                "Dedicated project manager",
-                "20-week delivery",
-              ],
-              featured: true,
-            },
-            {
-              name: "Premium",
-              price: "$7,999",
-              note: "Up to 85,000 words",
-              desc: "For full-length novels, comprehensive memoirs, and in-depth business books.",
-              features: [
-                "Up to 85,000 words",
-                "3 voice-capture sessions",
-                "Full story bible & outline",
-                "Unlimited revisions",
-                "Developmental + copy edit",
-                "Proofread & formatted delivery",
-                "Full NDA & rights transfer",
-                "Priority support & manager",
-                "Publishing consultation",
-                "26-week delivery",
-              ],
-            },
-          ]}
-        />
+        <section className="bg-white py-16">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 grid gap-10 lg:grid-cols-[0.95fr_0.85fr] items-center">
+            <div className="rounded-[2rem] overflow-hidden border border-[#e5e7eb] bg-[#f7f2e8] shadow-sm">
+              <img
+                src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1200&auto=format&fit=crop"
+                alt="Publishing tools"
+                className="w-[700px] h-[500px] object-cover"
+              />
+            </div>
+            <div className="space-y-6">
+              <p className="text-[#b45309] text-xs font-semibold uppercase tracking-[0.35em] mb-2">
+                Free tools
+              </p>
+              <h2 className="text-3xl md:text-4xl font-semibold text-[#0f172a] tracking-tight">
+                More free KDP tools to help publish your book
+              </h2>
+              <div className="space-y-4 text-[#475569] text-sm md:text-base leading-relaxed">
+                {[
+                  {
+                    title: "Kindle Previewer",
+                    desc: "See how your eBook will look before you publish it.",
+                  },
+                  {
+                    title: "Kindle Kids’ Book Creator",
+                    desc: "Turn your illustrated children’s books into great-looking eBooks.",
+                  },
+                  {
+                    title: "KDP Community",
+                    desc: "Join the conversation with new and accomplished KDP authors.",
+                  },
+                  {
+                    title: "Kindle Create",
+                    desc: "Convert your manuscript into a beautifully formatted eBook.",
+                  },
+                ].map((item) => (
+                  <div key={item.title} className="flex gap-4">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f59e0b]/10 text-[#b45309]">
+                      <Star size={18} />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-[#0f172a]">{item.title}</p>
+                      <p className="mt-1 text-[#475569]">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p className="text-[#475569] text-sm md:text-base leading-relaxed max-w-xl">
+                From formatting tools to community support, these free KDP resources make publishing simpler and more polished.
+              </p>
+            </div>
+          </div>
+        </section>
 
-        {/* ── Testimonials ── */}
-        <ServiceTestimonials
-          heading="Authors Who Trusted Us With Their Story"
-          testimonials={[
-            {
-              name: "James Whitfield",
-              role: "Author, The Last Harbor (Thriller)",
-              initials: "JW",
-              avatarColor: "bg-slate-600",
-              rating: 5,
-              quote:
-                "I gave them a 3-page outline and a voice sample. What came back was a 72,000-word thriller that read exactly like the book I had in my head but could never get onto paper. The writer clearly understood pacing, tension, and genre conventions. Hit #1 in Thrillers on Amazon within 3 days of launch.",
-            },
-            {
-              name: "Amara Johnson",
-              role: "Author, Built From Scratch (Business)",
-              initials: "AJ",
-              avatarColor: "bg-amber-600",
-              rating: 5,
-              quote:
-                "As a founder, I knew my story was worth telling — I just didn't have 6 months to write it myself. Amazon Books Publishing interviewed me, structured my story, and delivered a manuscript that's been used as a lead magnet generating thousands of leads. Worth 10x the investment.",
-            },
-            {
-              name: "Lily Chen",
-              role: "Author, Between Two Worlds (Literary Fiction)",
-              initials: "LC",
-              avatarColor: "bg-rose-600",
-              rating: 5,
-              quote:
-                "I was skeptical that anyone could write a literary novel in my voice. But the discovery process was so thorough — they asked about my childhood, my influences, my sentence rhythms — that the result was indistinguishable from my own writing. I cried reading the final draft.",
-            },
-          ]}
-        />
+        
 
-        {/* ── FAQs ── */}
         <ServiceFaqs
           heading="Book Writing FAQs"
           faqs={[
@@ -345,12 +305,25 @@ export default function BookWritingPage() {
           ]}
         />
 
-        {/* ── CTA ── */}
-        <ServiceCta
-          heading="Your Book Is Waiting to Be Written"
-          subheading="Book a free 30-minute consultation and we'll tell you exactly how we'd approach your book, who'd write it, and what it would cost. No obligation."
-          primaryLabel="Book Free Writing Consultation"
-        />
+        <section className="bg-[#0f172a] py-16">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 rounded-[2rem] border border-white/10 bg-[#0f172a]/95 p-10 text-center sm:text-left sm:flex sm:items-center sm:justify-between gap-6">
+            <div className="space-y-4 text-white">
+              <p className="text-sm uppercase tracking-[0.35em] text-[#94a3b8]">Join our community</p>
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+                Join our community of authors
+              </h2>
+              <p className="max-w-2xl text-sm leading-6 text-[#d1d5db]">
+                Have a question about your account or how to market your book? Ask for help from fellow publishers or lend a hand to someone new.
+              </p>
+            </div>
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center rounded-md bg-[#f59e0b] px-6 py-3 text-sm font-semibold text-[#0f172a] shadow-md shadow-[#f59e0b]/30 transition-colors hover:bg-[#d97706]"
+            >
+              Connect with experts and fellow authors
+            </a>
+          </div>
+        </section>
       </main>
       <SiteFooter />
     </>

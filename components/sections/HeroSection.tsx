@@ -51,7 +51,7 @@ export default function HeroSection() {
         </span> */}
 
         {/* Heading */}
-        <h1 className="text-4xl md:text-5xl xl:text-6xl text-amazon-dark leading-[1.08] tracking-tight mb-5">
+        <h1 className="text-4xl font-serif md:text-5xl xl:text-6xl text-amazon-dark leading-[1.08] tracking-tight mb-5">
           Your Story Deserves{" "}
           <span className="text-amazon-orange relative inline-block">
             to Be Heard

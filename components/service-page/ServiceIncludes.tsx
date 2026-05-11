@@ -35,10 +35,10 @@ export default function ServiceIncludes({
     <section className="py-10 md:py-15 bg-white">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="text-center mb-10">
-          <p className="text-amazon-orange text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-[#b45309] text-xs font-semibold uppercase tracking-widest mb-2">
             What&apos;s Included
           </p>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-amazon-dark tracking-tight mb-3">
+          <h2 className="text-3xl md:text-4xl font-semibold text-[#131a22] tracking-tight mb-3">
             {heading}
           </h2>
           <p className="text-muted-foreground text-sm max-w-md mx-auto">

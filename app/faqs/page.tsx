@@ -108,35 +108,49 @@ export default function FaqsPage() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main className="bg-[#f5f2eb] text-[#1f2937]">
         {/* ── Hero ── */}
-        <section className="bg-amazon-dark py-10 md:py-15 relative overflow-hidden">
-          <div className="absolute inset-0 bg-cover bg-center pointer-events-none" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1170&auto=format&fit=crop')" }} />
-          <div className="absolute inset-0 bg-amazon-dark/80 pointer-events-none" />
-          <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #FF9900 1px, transparent 1px)", backgroundSize: "26px 26px" }} />
-          <div className="relative max-w-7xl mx-auto px-4 md:px-6">
-            <nav className="flex items-center gap-1.5 text-xs text-white/30 mb-7">
-              <Link href="/" className="hover:text-white/60 transition-colors">Home</Link>
+        <section className="py-12 md:py-16">
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
+            <nav className="flex items-center gap-1.5 text-xs text-[#3a4553]/70 mb-7">
+              <Link href="/" className="hover:text-[#131a22] transition-colors">Home</Link>
               <ChevronRight size={12} />
-              <span className="text-amazon-orange font-medium">FAQs</span>
+              <span className="text-[#f59e0b] font-semibold">FAQs</span>
             </nav>
-            <div className="max-w-3xl">
-              <span className="inline-flex items-center gap-1.5 bg-amazon-orange/10 border border-amazon-orange/20 text-amazon-orange text-xs font-bold px-3 py-1.5 rounded-full mb-5 uppercase tracking-widest">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[440px] lg:min-h-[560px]">
+              <div className="max-w-2xl h-full flex flex-col justify-center">
+              <span className="inline-flex items-center gap-1.5 bg-[#f59e0b]/15 border border-[#f59e0b]/30 text-[#b45309] text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
                 <Star size={11} fill="currentColor" /> Frequently Asked Questions
               </span>
-              <h1 className="text-4xl md:text-5xl font-extrabold text-white leading-tight tracking-tight mb-4">
+              <h1 className="text-4xl md:text-6xl font-semibold text-[#131a22] leading-tight tracking-tight mb-4">
                 Every Question,{" "}
-                <span className="text-amazon-orange">Answered Honestly</span>
+                <span className="text-[#f59e0b]">Answered Honestly</span>
               </h1>
-              <p className="text-white/55 text-base md:text-lg leading-relaxed">
+              <p className="text-[#3a4553] text-base md:text-lg leading-relaxed">
                 We believe in radical transparency. If something&apos;s not covered here, call us — we&apos;d rather answer a hard question than lose your trust.
               </p>
+            </div>
+              <div className="min-h-[340px] md:min-h-[440px] lg:min-h-[560px] flex items-center justify-center">
+                <svg viewBox="0 0 420 560" className="w-full h-full max-h-[560px] drop-shadow-[0_12px_28px_rgba(0,0,0,0.16)]">
+                  <defs>
+                    <pattern id="faqHeroPattern" width="1" height="1" patternContentUnits="objectBoundingBox">
+                      <image
+                        href="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1170&auto=format&fit=crop"
+                        width="1"
+                        height="1"
+                        preserveAspectRatio="xMidYMid slice"
+                      />
+                    </pattern>
+                  </defs>
+                  <path d="M280 410c-25 20-55 31-89 31-69 0-118-40-118-99 0-45 28-75 70-95-17-21-28-43-28-67 0-48 38-83 91-83 49 0 86 31 86 75 0 40-28 66-69 86l48 58c11-18 19-39 24-62h44c-6 35-18 66-37 94l56 67h-58l-30-37Zm-109-26c22 0 42-7 59-20l-63-77c-27 14-45 33-45 60 0 23 19 37 49 37Zm-7-168c30-14 45-28 45-49 0-17-11-29-29-29-20 0-33 14-33 33 0 14 6 26 17 45Z" fill="url(#faqHeroPattern)" />
+                </svg>
+              </div>
             </div>
           </div>
         </section>
 
         {/* ── FAQs ── */}
-        <section className="py-10 md:py-15 bg-amazon-surface">
+        <section className="py-10 md:py-15 bg-[#f5f2eb]">
           <div className="max-w-4xl mx-auto px-4 md:px-6">
             {/* Category tabs */}
             <div className="flex flex-wrap gap-2 mb-8">

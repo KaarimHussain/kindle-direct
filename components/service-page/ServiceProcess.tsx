@@ -37,17 +37,17 @@ export default function ServiceProcess({
   subheading = "A transparent, step-by-step process that keeps you informed every mile.",
 }: ServiceProcessProps) {
   return (
-    <section className="py-10 md:py-15 bg-gradient-to-br from-slate-50 via-white to-indigo-50/40 relative overflow-hidden">
+    <section className="py-10 md:py-15 bg-[#f5f2eb] relative overflow-hidden">
       {/* decorative blobs */}
-      <div className="absolute top-0 right-0 w-72 h-72 bg-indigo-100/50 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-56 h-56 bg-teal-100/40 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-72 h-72 bg-[#f7b731]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-56 h-56 bg-[#0ea5a5]/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 md:px-6">
         <div className="text-center mb-10">
-          <p className="text-amazon-orange text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-[#b45309] text-xs font-semibold uppercase tracking-widest mb-2">
             Our Process
           </p>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-amazon-dark tracking-tight mb-3">
+          <h2 className="text-3xl md:text-4xl font-semibold text-[#131a22] tracking-tight mb-3">
             {heading}
           </h2>
           <p className="text-muted-foreground text-sm max-w-md mx-auto">
