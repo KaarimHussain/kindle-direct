@@ -26,6 +26,8 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 
+import Logo from "@/app/assets/images/Logo.png"
+
 const services = [
   { label: "Book Writing", href: "/services/book-writing", icon: PenLine, desc: "Professional ghostwriting in any genre" },
   { label: "Book Publishing", href: "/services/book-publishing", icon: BookOpen, desc: "Amazon KDP & global distribution" },
@@ -43,10 +45,23 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
+declare global {
+  interface Window {
+    Tawk_API?: {
+      toggle?: () => void;
+      maximize?: () => void;
+    };
+  }
+}
+
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const pathname = usePathname();
+
+  const openLiveChat = () => {
+    window.Tawk_API?.toggle?.();
+  };
 
   return (
     <header className="sticky top-0 z-50">
@@ -75,19 +90,7 @@ export default function SiteHeader() {
         <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between gap-6">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <div className="w-8 h-8 rounded bg-[#f7b731] flex items-center justify-center">
-              <BookOpen size={16} className="text-[#131a22]" />
-            </div>
-            <div className="leading-tight">
-              <span
-                className="text-white font-extrabold text-base tracking-tight"
-              >
-                amz<span className="text-amazon-orange">kindle</span>
-              </span>
-              <span className="block text-white/60 text-[10px] font-semibold tracking-widest uppercase -mt-0.5">
-                Publishers
-              </span>
-            </div>
+            <img src={Logo.src} alt="Amazon Books Publishing Logo" className="h-13 md:h-17 w-auto" />
           </Link>
 
           {/* CTA Buttons */}
@@ -98,13 +101,13 @@ export default function SiteHeader() {
             >
               Get Started
             </Link>
-            <Link
-              href="/contact"
+            <button
+              onClick={openLiveChat}
               className="bg-white hover:bg-white/80 text-amazon-dark font-semibold text-sm px-5 py-2.5 rounded border border-white/30 transition-colors flex items-center gap-2"
             >
               <MessageCircle size={15} />
               Live Chat
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Toggle */}
@@ -226,13 +229,15 @@ export default function SiteHeader() {
             >
               Get Started
             </Link>
-            <Link
-              href="/contact"
-              onClick={() => setOpen(false)}
+            <button
+              onClick={() => {
+                setOpen(false);
+                openLiveChat();
+              }}
               className="block bg-white/10 hover:bg-white/20 text-white font-semibold text-sm px-4 py-2.5 rounded text-center border border-white/30 transition-colors"
             >
               Live Chat
-            </Link>
+            </button>
           </div>
         </div>
       )}

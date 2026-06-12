@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx shadcn@latest add carousel)"
+      "Bash(npx shadcn@latest add carousel)",
+      "Bash(findstr -i favicon)",
+      "Bash(findstr version *)",
+      "Bash(dir \"app\\\\favicon.png\")",
+      "Bash(git mv *)"
     ]
   }
 }
