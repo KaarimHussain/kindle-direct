@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { BookOpen, Phone, Mail } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 import { contactInfo } from "@/data/contact";
+import Logo from "@/app/assets/images/Logo.png";
 import { Facebook } from "@/app/assets/svgs/icons/facebook";
 import { Twitter } from "@/app/assets/svgs/icons/twitter";
 import { Instagram } from "@/app/assets/svgs/icons/instagram";
@@ -148,20 +149,7 @@ export default function SiteFooter() {
             {/* Left: Brand + socials */}
             <div className="shrink-0 md:w-56">
               <Link href="/" className="flex items-center gap-2 mb-5">
-                <div
-                  className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
-                  style={{ backgroundColor: "#E47911" }}
-                >
-                  <BookOpen size={17} style={{ color: "#232F3E" }} />
-                </div>
-                <div className="leading-tight">
-                  <span className="text-white font-extrabold text-base tracking-tight">
-                    Kindle<span style={{ color: "#E47911" }}>Publisher</span>
-                  </span>
-                  <span className="block text-white/40 text-[10px] tracking-widest uppercase -mt-0.5">
-                    House
-                  </span>
-                </div>
+                <img src={Logo.src} alt="Kindle Publisher House Logo" className="h-13 md:h-17 w-auto" />
               </Link>
 
               {/* Social icons */}
