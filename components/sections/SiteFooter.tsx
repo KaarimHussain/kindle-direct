@@ -29,10 +29,10 @@ const company = [
 ];
 
 const legal = [
-  { label: "Terms and Conditions", href: "/terms" },
-  { label: "Privacy Notice", href: "/privacy" },
-  { label: "Conditions of Use", href: "/refund" },
-  { label: "Help", href: "/help" },
+  { label: "Terms and Conditions", href: "https://kdp.amazon.com/en_US/help/topic/G200627430" },
+  { label: "Privacy Notice", href: "https://kdp.amazon.com/en_US/help/topic/G201488490" },
+  { label: "Conditions of Use", href: "https://www.amazon.com/gp/help/customer/display.html/ref=footer_cou?ie=UTF8&nodeId=508088" },
+  { label: "Help", href: "https://kdp.amazon.com/en_US/help" },
 ];
 
 const socials = [
