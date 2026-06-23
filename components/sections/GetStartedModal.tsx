@@ -167,7 +167,7 @@ export default function GetStartedModal({ onClose }: { onClose: () => void }) {
                   </div>
                   <div>
                     <label className="block text-white/70 text-xs font-semibold mb-1 uppercase tracking-wide">
-                      Phone <span className="text-white/30 font-normal normal-case">(optional)</span>
+                      Phone <span className="text-white/30 font-normal normal-case"></span>
                     </label>
                     <input
                       type="tel" name="phone" value={form.phone} onChange={handleChange}
@@ -211,7 +211,7 @@ export default function GetStartedModal({ onClose }: { onClose: () => void }) {
                 {/* Message */}
                 <div>
                   <label className="block text-white/70 text-xs font-semibold mb-1 uppercase tracking-wide">
-                    Tell Us About Your Project <span className="text-white/30 font-normal normal-case">(optional)</span>
+                    Tell Us About Your Project <span className="text-white/30 font-normal normal-case"></span>
                   </label>
                   <textarea
                     name="message" value={form.message} onChange={handleChange}
