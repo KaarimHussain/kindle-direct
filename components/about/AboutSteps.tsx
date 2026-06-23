@@ -8,12 +8,12 @@ const steps = [
     bullets: [
       {
         text: "Format your manuscript file and create your front, body, and back matter, such as your title page, table of contents, and author bio.",
-        link: { label: "Kindle Create", href: "/services/book-writing" },
+        link: { label: "Kindle Create", href: "" },
         linkSuffix: " can help you format your books.",
       },
       {
         text: "Use our free ",
-        link: { label: "Cover Creator tool", href: "/services/book-publishing" },
+        link: { label: "Cover Creator tool", href: "" },
         linkSuffix: ", download a template, or create your own cover file.",
       },
     ],
@@ -31,12 +31,12 @@ const steps = [
       },
       {
         text: "Upload and preview your prepared manuscript and book cover using our ",
-        link: { label: "online previewer", href: "/services/book-publishing" },
+        link: { label: "online previewer", href: "" },
         linkSuffix: ".",
       },
       {
         text: "Select your ",
-        link: { label: "publishing rights and pricing", href: "/services/book-publishing" },
+        link: { label: "publishing rights and pricing", href: "" },
         linkSuffix: " and publish your book.",
       },
     ],
@@ -49,17 +49,17 @@ const steps = [
     bullets: [
       {
         text: "Offer your eBook on Kindle Unlimited by enrolling in ",
-        link: { label: "KDP Select", href: "/services/book-marketing" },
+        link: { label: "KDP Select", href: "" },
         linkSuffix: ".",
       },
       {
         text: "Create an ",
-        link: { label: "Author Page", href: "/about" },
+        link: { label: "Author Page", href: "" },
         linkSuffix: " to share information about yourself and your books.",
       },
       {
         text: "Set up ",
-        link: { label: "Sponsored Products ads", href: "/services/book-marketing" },
+        link: { label: "Sponsored Products ads", href: "" },
         linkSuffix: " to reach more readers through Amazon Advertising.",
       },
     ],
@@ -98,9 +98,9 @@ export default function AboutSteps() {
                       <span>
                         {b.text}
                         {b.link && (
-                          <Link href={b.link.href} className="text-[#008296] hover:underline">
+                          <span className="text-[#008296]">
                             {b.link.label}
-                          </Link>
+                          </span>
                         )}
                         {b.linkSuffix}
                       </span>

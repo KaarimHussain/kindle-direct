@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import Link from "next/link";
 import { Phone, Mail } from "lucide-react";
 import { contactInfo } from "@/data/contact";
@@ -7,7 +9,7 @@ import { Twitter } from "@/app/assets/svgs/icons/twitter";
 import { Instagram } from "@/app/assets/svgs/icons/instagram";
 import { LinkedIn } from "@/app/assets/svgs/icons/linkedin";
 import { YouTube } from "@/app/assets/svgs/icons/youtube";
-
+import GetStartedModal from "@/components/sections/GetStartedModal";
 const services = [
   { label: "Book Writing", href: "/services/book-writing" },
   { label: "Book Editing", href: "/services/book-editing-proofreading" },
@@ -47,28 +49,27 @@ const footerLinks = [
   {
     title: "KDP Select",
     desc: "Earn more money and reach new readers",
-    href: "/services/book-publishing",
   },
   {
     title: "CreateSpace",
     desc: "Link your existing account to KDP",
-    href: "/services/book-publishing",
   },
   {
     title: "KDP Community",
     desc: "Connect with experts and fellow authors",
-    href: "/#testimonials",
   },
   {
     title: "Audiobook Creation Exchange (ACX)",
     desc: "Indie audiobook publishing made easy",
-    href: "/services/book-marketing",
   },
 ];
 
 export default function SiteFooter() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <>
+      {showModal && <GetStartedModal onClose={() => setShowModal(false)} />}
       {/* ── CTA Banner ── */}
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
@@ -186,10 +187,10 @@ export default function SiteFooter() {
             {/* Right: 2-col link grid — KDP style */}
             <div className="flex-1 grid grid-cols-1 sm:grid-cols-2">
               {footerLinks.map((item) => (
-                <a
+                <button
                   key={item.title}
-                  href={item.href}
-                  className="group"
+                  onClick={() => setShowModal(true)}
+                  className="group text-left"
                 >
                   <p
                     className="text-sm font-medium group-hover:underline transition-colors"
@@ -198,7 +199,7 @@ export default function SiteFooter() {
                     {item.title}
                   </p>
                   <p className="text-white/55 text-sm">{item.desc}</p>
-                </a>
+                </button>
               ))}
             </div>
 

@@ -45,13 +45,13 @@ const defaultTestimonials: Testimonial[] = [
     name: "Laura Rocca",
     sub: "Italy | Romance",
     quote: "Becoming a KDP author allowed me to finally live my childhood dream. The writer captured my voice and helped me launch a polished romance novel in months.",
-    avatar: "https://m.media-amazon.com/images/G/01/Kindle/dp/design/author/img_author_LauraRocca_v1.png",
+    avatar: "https://plus.unsplash.com/premium_photo-1664451820045-d2ce2ef43e60?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGF1cmElMjByb2NhfGVufDB8fDB8fHww",
   },
   {
     name: "Sundari Venkatraman",
     sub: "India | Romance",
     quote: "My memoir was in pieces until the ghostwriter organized my story and made it feel true. I now have a book I can proudly share.",
-    avatar: "https://m.media-amazon.com/images/G/01/Kindle/dp/design/author/img_author_SundariVenkatraman_v1.png",
+    avatar: "https://images.unsplash.com/photo-1713974304460-cf10b11b73b7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGF1cmElMjByb2NhfGVufDB8fDB8fHww",
   },
   {
     name: "Marah Woolf",

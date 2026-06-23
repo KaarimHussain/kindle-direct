@@ -16,6 +16,8 @@ import {
   BookMarked,
   Feather,
   MessageCircle,
+  Loader2,
+  AlertCircle,
 } from "lucide-react";
 import { contactInfo } from "@/data/contact";
 import {
@@ -64,15 +66,31 @@ function GetStartedModal({ onClose }: { onClose: () => void }) {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [serverError, setServerError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: wire up to your actual form handler / API
-    setSubmitted(true);
+    setServerError("");
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Failed to send message.");
+      setSubmitted(true);
+    } catch (err) {
+      setServerError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -155,6 +173,12 @@ function GetStartedModal({ onClose }: { onClose: () => void }) {
               </div>
 
               <form onSubmit={handleSubmit} className="flex flex-col gap-3.5">
+                {serverError && (
+                  <div className="flex items-start gap-2 bg-red-900/30 border border-red-500/40 text-red-300 rounded-lg px-4 py-3 text-xs">
+                    <AlertCircle size={14} className="shrink-0 mt-0.5" />
+                    <span>{serverError}</span>
+                  </div>
+                )}
                 {/* Full Name */}
                 <div>
                   <label className="block text-white/70 text-xs font-semibold mb-1 tracking-wide uppercase">
@@ -287,10 +311,15 @@ function GetStartedModal({ onClose }: { onClose: () => void }) {
 
                 <button
                   type="submit"
-                  className="mt-1 w-full rounded-lg py-3 font-bold text-sm text-white transition-all hover:scale-[1.02] active:scale-[0.98]"
+                  disabled={submitting}
+                  className="mt-1 w-full flex items-center justify-center gap-2 rounded-lg py-3 font-bold text-sm text-white disabled:opacity-70 transition-all hover:scale-[1.02] active:scale-[0.98]"
                   style={{ background: "linear-gradient(90deg, #ff9900, #f0a500)" }}
                 >
-                  Submit — Get a Free Quote
+                  {submitting ? (
+                    <><Loader2 size={14} className="animate-spin" /> Sending…</>
+                  ) : (
+                    "Submit — Get a Free Quote"
+                  )}
                 </button>
               </form>
             </>

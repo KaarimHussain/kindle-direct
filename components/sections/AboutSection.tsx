@@ -66,7 +66,7 @@ export default function AboutSection() {
               ))}
             </ul>
             <a
-              href="#contact"
+              href="/contact"
               className="inline-flex items-center gap-2 bg-amazon-dark hover:bg-amazon-navy text-white font-bold px-5 py-2.5 rounded text-sm transition-colors"
             >
               Meet Our Team →

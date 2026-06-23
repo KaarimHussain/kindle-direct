@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { CheckCircle2, Loader2, ChevronDown } from "lucide-react";
+import { CheckCircle2, Loader2, ChevronDown, AlertCircle } from "lucide-react";
 
 const services = [
   "Book Writing / Ghostwriting",
@@ -43,8 +43,9 @@ const inputCls = (hasError: boolean) =>
 
 export default function ContactForm() {
   const [form, setForm] = useState<FormData>(empty);
-  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errors, setErrors] = useState<Partial<FormData>>({});
+  const [serverError, setServerError] = useState("");
 
   const set = (key: keyof FormData) =>
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
@@ -60,13 +61,26 @@ export default function ContactForm() {
     return e;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length > 0) { setErrors(errs); return; }
     setErrors({});
+    setServerError("");
     setStatus("loading");
-    setTimeout(() => setStatus("success"), 1800);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Failed to send message.");
+      setStatus("success");
+    } catch (err) {
+      setServerError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+      setStatus("error");
+    }
   };
 
   if (status === "success") {
@@ -78,7 +92,7 @@ export default function ContactForm() {
           Our team will review your project and reach out within 1 business hour.
         </p>
         <button
-          onClick={() => { setForm(empty); setStatus("idle"); }}
+          onClick={() => { setForm(empty); setStatus("idle"); setServerError(""); }}
           className="text-[#008296] text-sm hover:underline"
         >
           Submit another inquiry
@@ -89,6 +103,13 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+
+      {status === "error" && serverError && (
+        <div className="flex items-start gap-2.5 bg-red-50 border border-red-200 text-red-700 rounded px-4 py-3 text-sm">
+          <AlertCircle size={16} className="shrink-0 mt-0.5" />
+          <span>{serverError}</span>
+        </div>
+      )}
 
       <div className="grid sm:grid-cols-2 gap-4 items-start">
         <div>
