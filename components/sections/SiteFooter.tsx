@@ -10,6 +10,8 @@ import { Instagram } from "@/app/assets/svgs/icons/instagram";
 import { LinkedIn } from "@/app/assets/svgs/icons/linkedin";
 import { YouTube } from "@/app/assets/svgs/icons/youtube";
 import GetStartedModal from "@/components/sections/GetStartedModal";
+
+
 const services = [
   { label: "Book Writing", href: "/services/book-writing" },
   { label: "Book Editing", href: "/services/book-editing-proofreading" },
@@ -31,10 +33,10 @@ const company = [
 ];
 
 const legal = [
-  { label: "Terms and Conditions", href: "https://kdp.amazon.com/en_US/help/topic/G200627430" },
-  { label: "Privacy Notice", href: "https://kdp.amazon.com/en_US/help/topic/G201488490" },
-  { label: "Conditions of Use", href: "https://www.amazon.com/gp/help/customer/display.html/ref=footer_cou?ie=UTF8&nodeId=508088" },
-  { label: "Help", href: "https://kdp.amazon.com/en_US/help" },
+  { label: "Terms and Conditions", href: "/terms" },
+  { label: "Privacy Notice", href: "/privacy-notice" },
+  { label: "Conditions of Use", href: "/Condition-of-use" },
+  { label: "Help", href: "/help" },
 ];
 
 const socials = [

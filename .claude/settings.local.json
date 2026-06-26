@@ -14,7 +14,9 @@
       "Bash(python3 *)",
       "PowerShell(python \"C:\\\\Users\\\\Lenovo\\\\AppData\\\\Local\\\\Temp\\\\ssh_check.py\")",
       "PowerShell(python \"C:\\\\Users\\\\Lenovo\\\\AppData\\\\Local\\\\Temp\\\\ssh_serverjs.py\" 2>&1; Write-Host \"DONE\")",
-      "PowerShell(python \"C:\\\\Users\\\\Lenovo\\\\AppData\\\\Local\\\\Temp\\\\ssh_build.py\" 2>&1; Write-Host \"DONE\")"
+      "PowerShell(python \"C:\\\\Users\\\\Lenovo\\\\AppData\\\\Local\\\\Temp\\\\ssh_build.py\" 2>&1; Write-Host \"DONE\")",
+      "Bash(python -c ' *)",
+      "Bash(node -e ' *)"
     ]
   }
 }
