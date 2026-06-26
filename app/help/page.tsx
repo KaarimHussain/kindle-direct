@@ -26,32 +26,32 @@ export default function KDPHelpCenterComplete() {
     {
       tag: 'NEW',
       title: 'Groundwood paper is now available',
-      desc: 'A lower-carbon print option for your paperback novels and text-heavy books is now available to all KDP authors.'
+      desc: 'A lower-carbon print option for your paperback novels and text-heavy books is now available to all KDPH authors.'
     },
     {
       tag: 'NEW',
-      title: 'Download your KDP book files from Bookshelf',
-      desc: 'You can now download your KDP eBook and print book manuscript and cover files directly from your KDP Bookshelf.'
+      title: 'Download your KDPH book files from Bookshelf',
+      desc: 'You can now download your KDPH eBook and print book manuscript and cover files directly from your KDPH Bookshelf.'
     },
     {
       tag: 'SUBSCRIBE',
-      title: 'Stay connected with KDP updates and announcements',
-      desc: 'To receive KDP announcements, beta program invites, publishing insights, and more, make sure you\'re subscribed to KDP\'s news and product announcement emails. To do so, access the email preferences update page, then click "Continue" to confirm your subscription.'
+      title: 'Stay connected with KDPH updates and announcements',
+      desc: 'To receive KDPH announcements, beta program invites, publishing insights, and more, make sure you\'re subscribed to KDPH\'s news and product announcement emails. To do so, access the email preferences update page, then click "Continue" to confirm your subscription.'
     },
     {
       tag: 'ALERT',
       title: 'Account security and avoiding scams',
-      desc: 'Avoid Publisher Scams. KDP will never ask you to share sensitive information such as your Amazon password or full banking details outside your KDP account. KDP is a free service and not affiliated with third-party companies.'
+      desc: 'Avoid Publisher Scams. KDPH will never ask you to share sensitive information such as your Amazon password or full banking details outside your KDPH account. KDPH is a free service and not affiliated with third-party companies.'
     },
     {
       tag: 'NEW',
       title: 'Identity verification is rolling out to authors',
-      desc: 'We\'re committed to protecting those who publish with us and those who buy books on Amazon. As part of this effort, we are beginning to ask authors and publishers to verify their identity on KDP.'
+      desc: 'We\'re committed to protecting those who publish with us and those who buy books on Amazon. As part of this effort, we are beginning to ask authors and publishers to verify their identity on KDPH.'
     },
     {
       tag: 'CONNECT',
-      title: 'KDP is on Instagram',
-      desc: 'Follow KDP on Instagram at @AmazonKDP for helpful and inspirational content as well as highlights of KDP authors and titles.'
+      title: 'KDPH is on Instagram',
+      desc: 'Follow KDPH on Instagram at @AmazonKDP for helpful and inspirational content as well as highlights of KDPH authors and titles.'
     }
   ];
 
@@ -128,13 +128,13 @@ export default function KDPHelpCenterComplete() {
           <div className="text-xs text-gray-600 flex items-center gap-1 px-1">
             <span>Help</span>
             <span className="text-gray-400 text-[10px]">➔</span>
-            <span className="font-medium text-gray-800">KDP Help Center Home</span>
+            <span className="font-medium text-gray-800">KDPH Help Center Home</span>
           </div>
 
           {/* HEADER MAIN SUB-BANNER */}
           <div className="pt-2 px-1">
             <h1 className="text-2xl font-bold text-[#e77600] tracking-tight">
-              KDP Help Center Home
+              KDPH Help Center Home
             </h1>
             <p className="text-sm text-gray-700 mt-1.5 leading-relaxed">
               Find help where you need it. You can use the search bar above or navigate through topics, using the menu on the left.
@@ -176,9 +176,9 @@ export default function KDPHelpCenterComplete() {
 
             <div className="grid grid-cols-1 md:grid-cols-11 gap-4 items-center">
               <div className="md:col-span-3 bg-white p-4 rounded border border-gray-200 shadow-sm h-full">
-                <h3 className="font-bold text-gray-950 text-sm mb-1">What is KDP?</h3>
+                <h3 className="font-bold text-gray-950 text-sm mb-1">What is KDPH?</h3>
                 <p className="text-xs text-gray-600 leading-normal">
-                  Discover if KDP is the right publishing service for your book.
+                  Discover if KDPH is the right publishing service for your book.
                 </p>
               </div>
 
@@ -205,7 +205,7 @@ export default function KDPHelpCenterComplete() {
               </div>
 
               <div className="md:col-span-3 bg-white p-4 rounded border border-gray-200 shadow-sm h-full">
-                <h3 className="font-bold text-gray-950 text-sm mb-1">Create a Book on KDP</h3>
+                <h3 className="font-bold text-gray-950 text-sm mb-1">Create a Book on KDPH</h3>
                 <p className="text-xs text-gray-600 leading-normal">
                   Use our walk-through guide for creating your first book.
                 </p>

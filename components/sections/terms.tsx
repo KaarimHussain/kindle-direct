@@ -8,20 +8,20 @@ export default function KdpHelpCenter() {
   const helpTopics = [
     {
       category: "Help",
-      links: ["KDP Help Center Home"]
+      links: ["KDPH Help Center Home"]
     },
     {
       category: "Account & Taxes",
-      links: ["Set up your KDP account", "CreateSpace Account", "Tax Information"]
+      links: ["Set up your KDPH account", "CreateSpace Account", "Tax Information"]
     },
     {
       category: "Book Formatting",
       links: ["Format Your Paperback", "Format Your Hardcover", "Format Your eBook", "Tools and Resources"]
     },
     {
-      category: "KDP Publishing",
+      category: "KDPH Publishing",
       links: [
-        "Start publishing with KDP", 
+        "Start publishing with KDPH",
         "Create a Book", 
         "Hardcover", 
         "Beta: Audiobooks with virtual voice", 
@@ -117,7 +117,7 @@ export default function KdpHelpCenter() {
             <div className="flex items-center border border-gray-200 rounded shadow-sm overflow-hidden bg-white max-w-sm ml-auto md:ml-0">
               <div className="p-4 flex flex-col items-end text-right space-y-0.5">
                 <div className="text-sm font-medium text-gray-900">
-                  <span className="font-black text-black">kdp</span> jumpstart
+                  <span className="font-black text-black">kdph</span> jumpstart
                 </div>
                 <p className="text-[11px] text-gray-500 font-medium">
                   A guide to publishing on Amazon

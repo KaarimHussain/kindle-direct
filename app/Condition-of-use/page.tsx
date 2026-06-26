@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import SiteHeader from '@/components/sections/SiteHeader';
 import SiteFooter from '@/components/sections/SiteFooter';
 
 type TabKey = 'terms' | 'privacy' | 'conditions' | 'help';
 
-export default function LegalCenter() {
+function LegalCenterInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [searchQuery, setSearchQuery] = useState('');
@@ -221,5 +221,13 @@ export default function LegalCenter() {
     </div>
       <SiteFooter />
     </>
+  );
+}
+
+export default function LegalCenter() {
+  return (
+    <Suspense>
+      <LegalCenterInner />
+    </Suspense>
   );
 }
